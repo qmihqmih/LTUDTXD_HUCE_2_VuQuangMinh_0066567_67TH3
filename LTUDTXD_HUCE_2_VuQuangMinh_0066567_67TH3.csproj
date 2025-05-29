@@ -56,6 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\StringToBoolConverter.cs" />
+    <Compile Include="Model\PhuongAnCoc.cs" />
     <Compile Include="Service\DataService.cs" />
     <Compile Include="Model\Ground.cs" />
     <Compile Include="Model\Inputdata.cs" />
@@ -72,7 +74,10 @@
       <DependentUpon>ucstatus.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\GroundViewModel.cs" />
+    <Compile Include="ViewModel\PhuongAnCocViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\TaitrongViewModel.cs" />
+    <Compile Include="ViewModel\TinhToanGroundViewModel.cs" />
     <Compile Include="ViewModel\Vatlieu2ViewModel.cs" />
     <Compile Include="ViewModel\VatlieuViewModel.cs" />
     <Compile Include="View\Botricoc.xaml.cs">

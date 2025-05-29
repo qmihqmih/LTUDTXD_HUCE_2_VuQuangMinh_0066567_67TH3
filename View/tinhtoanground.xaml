@@ -20,7 +20,7 @@
                 </StackPanel>
             </Grid>
             <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="300" Orientation="Vertical">
-                <Button Content="Tính toán" Foreground="White" Grid.Row="1" Height="30" HorizontalAlignment="Center" Margin="0,100,0,0" Name="btnUpdate" VerticalAlignment="Center" Width="70">
+                <Button Content="Tính toán" Foreground="White" Grid.Row="1" Height="30" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Center" Width="70" Command="{Binding TinhToanCommand}">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="#03346E" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -30,7 +30,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <ListView Name="GroundGrid" Grid.Row="1" Margin="5,80,5,0" ItemsSource="{Binding Ground}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="110" >
+            <ListView Name="GroundGrid" Grid.Row="1" Margin="5,80,5,0" ItemsSource="{Binding GroundList}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="110" >
                 <ListView.View>
                     <GridView x:Name="grdTest">
                         <GridViewColumn Header="Lớp đất" DisplayMemberBinding="{Binding Lopdat}" Width="50"/>
@@ -40,7 +40,7 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Width="100" Grid.Row="1" Margin=" 0 0 0 10">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Width="100" Grid.Row="1" Margin=" 0 0 0 50">
                 <Button Content="Chọn phương án" Foreground="White" Height="30" Width="100" x:Name="btnchonphuongancoc" Click="btnchonphuongancoc_Click" >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">

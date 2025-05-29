@@ -62,7 +62,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
 
         private double? TinhDoset(Ground g)
         {
-            if (g.C != null && g.Modun != null && g.Modun != 0)
+            if (g.C != null && g.Modun != null && g.Modun != 0) 
                 return g.C / g.Modun; // ví dụ đơn giản
             return null;
         }

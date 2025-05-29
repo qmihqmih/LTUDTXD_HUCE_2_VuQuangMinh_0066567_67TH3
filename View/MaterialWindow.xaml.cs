@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.View
         public MaterialWindow()
         {
             InitializeComponent();
+            this.DataContext = new VatlieuViewModel(); // Gán ViewModel
+            this.DataContext = new Vatlieu2ViewModel();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

@@ -11,10 +11,10 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
     public class Vatlieu2
     {
         public string loaithep;
-        public string rs;
+        public double rs;
         public double rsw;
         public double rsc;
-        public double eb;
+        public double es;
         public string Loaithep
         {
             get
@@ -27,7 +27,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
                 OnPropertyChanged("Loaithep");
             }
         }
-        public string Rs
+        public double Rs
         {
             get
             {
@@ -63,16 +63,16 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
                 OnPropertyChanged("Rsc");
             }
         }
-        public double Eb
+        public double Es
         {
             get
             {
-                return eb;
+                return es;
             }
             set
             {
-                eb = value;
-                OnPropertyChanged("Eb");
+                es = value;
+                OnPropertyChanged("Es");
             }
         }
 

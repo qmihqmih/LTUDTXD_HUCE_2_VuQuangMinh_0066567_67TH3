@@ -8,10 +8,11 @@ using System.Windows.Input;
 using LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model;
 using System.Collections.ObjectModel;
 using System.Windows;
+using LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Service;
 
 namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
 {
-    class GroundViewModel
+    public class GroundViewModel
     {
         private ObservableCollection<Ground> _GroundList;
 
@@ -31,6 +32,17 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
             SaveCommand = new RelayCommand(SaveGroundData);
         }
 
+        private Ground _selectedGround;
+        public Ground SelectedGround
+        {
+            get => _selectedGround;
+            set
+            {
+                _selectedGround = value;
+                OnPropertyChanged(nameof(SelectedGround));
+            }
+        }
+
         public ObservableCollection<Ground> Ground
         {
             get { return _GroundList; }
@@ -39,14 +51,16 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
 
         private void SaveGroundData()
         {
-            // Duyệt qua danh sách lớp đất và lấy dữ liệu
-            foreach (var ground in _GroundList)
+            if (_GroundList != null && _GroundList.Count > 0)
             {
-                System.Diagnostics.Debug.WriteLine($"Lớp: {ground.Lopdat}, Phi: {ground.Phi}, H: {ground.H}, Gamma: {ground.Gamma}");
+                // Lưu toàn bộ danh sách vào InputData
+                DataService.Instance.InputData.GroundList = _GroundList.ToList();
+                MessageBox.Show("Đã lưu danh sách lớp đất vào InputData!", "Thông báo");
             }
-
-            // Thông báo khi lưu thành công 
-            MessageBox.Show("Dữ liệu đã được lưu và sẵn sàng cho tính toán!", "Thông báo");
+            else
+            {
+                MessageBox.Show("Danh sách lớp đất rỗng, không thể lưu!", "Cảnh báo");
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -54,40 +68,6 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        //update button
-        private ICommand mUpdater;
-
-        public ICommand UpdateCommand
-        {
-            get
-            {
-                if (mUpdater == null)
-                    mUpdater = new Updater();
-                return mUpdater;
-            }
-            set
-            {
-                mUpdater = value;
-            }
-        }
-
-        #region Updater
-        private class Updater : ICommand
-        {
-            public bool CanExecute(object parameter)
-            {
-                return true;
-            }
-
-            public event EventHandler CanExecuteChanged;
-
-            public void Execute(object parameter)
-            {
-                // Code implementation for execution
-            }
-        }
-        #endregion
 
         #region RelayCommand
         public class RelayCommand : ICommand

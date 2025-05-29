@@ -8,7 +8,7 @@
         Title="Taitrong" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <GroupBox Header="Tải trọng" FontSize="15" FontWeight="Bold" FontFamily="arialblack" Margin="0 0 0 0" Width="184" Height="158" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <GroupBox Header="Tải trọng" FontSize="15" FontWeight="Bold" FontFamily="arialblack" Margin="0 70 0 0" Width="184" Height="158" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <StackPanel Background="White" Orientation="Vertical">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <Label Content="Lực dọc N   =" FontSize="12" FontWeight="Medium" />
@@ -32,8 +32,16 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
-            
-        <Button>dsfsf</Button>
+
+            <Button Content="Lưu dữ liệu" Foreground="White" Width="93" Height="30" Margin="0,20,0,0"  Command="{Binding LuuCommand}"  >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="#03346E" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

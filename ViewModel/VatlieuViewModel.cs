@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
+using LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Service;
 
 
 namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
@@ -18,6 +19,8 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
 
         public VatlieuViewModel()
         {
+            LuuCommand = new RelayCommand(LuuDuLieu);
+
             _VatlieuList = new ObservableCollection<Vatlieu>
         {
             new Vatlieu { capben="B15", mac="M200", rb=8.5, rbt=0.75, eb=23000},
@@ -28,7 +31,34 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
             new Vatlieu { capben="B40", mac="M500", rb=22, rbt=1.4, eb=36000},
         };
         }
-        public ObservableCollection<Vatlieu> Vatlieu
+
+        private Vatlieu _VatlieuDuocChon;
+        public Vatlieu VatlieuDuocChon
+        {
+            get => _VatlieuDuocChon;
+            set
+            {
+                _VatlieuDuocChon = value;
+                OnPropertyChanged(nameof(VatlieuDuocChon));
+            }
+        }
+        public ICommand LuuCommand { get; }
+
+        private void LuuDuLieu()
+        {
+            if (VatlieuDuocChon != null)
+            {
+                DataService.Instance.InputData.Vatlieu = VatlieuDuocChon;
+                MessageBox.Show($"Đã lưu vật liệu: {VatlieuDuocChon.capben}");
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một vật liệu!");
+            }
+        }
+
+
+        public ObservableCollection<Vatlieu> Vatlieu 
         {
             get { return _VatlieuList; }
             set { _VatlieuList = value; OnPropertyChanged(nameof(Vatlieu)); } // Đảm bảo cập nhật UI khi thay đổi 
@@ -38,6 +68,27 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        public class RelayCommand : ICommand
+        {
+            private readonly Action _execute;
+            private readonly Func<bool> _canExecute;
+
+            public RelayCommand(Action execute, Func<bool> canExecute = null)
+            {
+                _execute = execute;
+                _canExecute = canExecute;
+            }
+
+            public bool CanExecute(object parameter) => _canExecute == null || _canExecute();
+            public void Execute(object parameter) => _execute();
+            public event EventHandler CanExecuteChanged
+            {
+                add => CommandManager.RequerySuggested += value;
+                remove => CommandManager.RequerySuggested -= value;
+            }
         }
     }
     }

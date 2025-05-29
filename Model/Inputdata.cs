@@ -10,7 +10,8 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
     {
         public Taitrong Taitrong { get; set; }
         public Vatlieu Vatlieu { get; set; } 
-        public Vatlieu2 Vatlieu2 { get; set; } 
+        public Vatlieu2 Vatlieu2 { get; set; }
+        public List<Ground> GroundList { get; set; } //  Danh sách các lớp đất
 
 
         // Có thể thêm nhóm dữ liệu khác nếu cần sau này
@@ -20,6 +21,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             Taitrong = new Taitrong();
             Vatlieu = new Vatlieu();
             Vatlieu2 = new Vatlieu2();
+            GroundList = new List<Ground>(); // Khởi tạo danh sách lớp đất
         }
     }
 }

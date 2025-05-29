@@ -10,17 +10,22 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
     public class Ground : INotifyPropertyChanged
     {
         private int? lopdat;
-        private int? phi;
-        private int? h;
-        private int? gamma;
-        private int? c;
-        private int? modun;
-        private int? delta;
-        private int? e;
+        private double? phi;
+        private double? h;
+        private double? gamma;
+        private double? c;
+        private double? modun;
+        private double? delta;
+        private double? e;
         private string groundtype;
-        private int? doset;
+        private double? doset;
         private int? spt;
-        private int? cpt;
+        private double? cpt;
+        private double? w;
+        private double? wd;
+        private double? wch;
+        private double? chisodeo;
+        private double? gammanuoc = 9.81; // giá trị mặc định của trọng lượng riêng nước (kN/m3)
 
         public int? Lopdat
         {
@@ -35,7 +40,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? Phi
+        public double? Phi
         {
             get
             {
@@ -48,7 +53,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? H
+        public double? H
         {
             get
             {
@@ -61,7 +66,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? Gamma
+        public double? Gamma
         {
             get
             {
@@ -74,7 +79,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? C
+        public double? C
         {
             get
             {
@@ -87,7 +92,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? Modun
+        public double? Modun
         {
             get
             {
@@ -100,7 +105,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? Delta
+        public double? Delta
         {
             get
             {
@@ -113,7 +118,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? E
+        public double? E
         {
             get
             {
@@ -139,7 +144,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? Doset
+        public double? Doset
         {
             get
             {
@@ -165,7 +170,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
             }
         }
 
-        public int? Cpt
+        public double? Cpt
         {
             get
             {
@@ -176,6 +181,36 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.Model
                 cpt = value;
                 OnPropertyChanged("Cpt");
             }
+        }
+
+        public double? W
+        {
+            get => w;
+            set { w = value; OnPropertyChanged(nameof(W)); }
+        }
+
+        public double? Wd
+        {
+            get => wd;
+            set { wd = value; OnPropertyChanged(nameof(Wd)); }
+        }
+
+        public double? Wch
+        {
+            get => wch;
+            set { wch = value; OnPropertyChanged(nameof(Wch)); }
+        }
+
+        public double? ChiSoDeo
+        {
+            get => chisodeo;
+            set { chisodeo = value; OnPropertyChanged(nameof(ChiSoDeo)); }
+        }
+
+        public double? GammaNuoc
+        {
+            get => gammanuoc;
+            set { gammanuoc = value; OnPropertyChanged(nameof(GammaNuoc)); }
         }
 
         #region INotifyPropertyChanged Members

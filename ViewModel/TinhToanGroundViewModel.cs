@@ -47,6 +47,7 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
                 // Tính lại E và Doset nếu cần
                 g.E = (int?)TinhE(g);
                 g.Doset = (int?)TinhDoset(g);
+                g.ChiSoDeo = (int?)TinhChiSoDeo(g);
 
                 GroundList.Add(g);
             }
@@ -60,6 +61,13 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
         }
 
         private double? TinhDoset(Ground g)
+        {
+            if (g.C != null && g.Modun != null && g.Modun != 0)
+                return g.C / g.Modun; // ví dụ đơn giản
+            return null;
+        }
+
+        private double? TinhChiSoDeo(Ground g)
         {
             if (g.C != null && g.Modun != null && g.Modun != 0)
                 return g.C / g.Modun; // ví dụ đơn giản

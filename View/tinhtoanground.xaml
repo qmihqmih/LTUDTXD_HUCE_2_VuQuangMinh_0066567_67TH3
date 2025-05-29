@@ -30,11 +30,12 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <ListView Name="GroundGrid" Grid.Row="1" Margin="5,80,5,0" ItemsSource="{Binding GroundList}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="110" >
+            <ListView Name="GroundGrid" Grid.Row="1" Margin="0,192,0,0" ItemsSource="{Binding GroundList}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="110" Width="383" >
                 <ListView.View>
                     <GridView x:Name="grdTest">
                         <GridViewColumn Header="Lớp đất" DisplayMemberBinding="{Binding Lopdat}" Width="50"/>
                         <GridViewColumn Header="Hệ số rỗng e" DisplayMemberBinding="{Binding E}" Width="75"/>
+                        <GridViewColumn Header="Chỉ số dẻo A" DisplayMemberBinding="{Binding ChiSoDeo}" Width="80"/>
                         <GridViewColumn Header="Độ sệt B" DisplayMemberBinding="{Binding Doset}" Width="60"/>
                         <GridViewColumn Header="Loại đất" DisplayMemberBinding="{Binding GroundType}" Width="115"/>
                     </GridView>

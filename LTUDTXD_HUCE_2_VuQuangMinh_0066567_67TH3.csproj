@@ -75,7 +75,7 @@
     </Compile>
     <Compile Include="ViewModel\GroundViewModel.cs" />
     <Compile Include="ViewModel\PhuongAnCocViewModel.cs" />
-    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\SucChiuTaiCocViewModel.cs" />
     <Compile Include="ViewModel\TaitrongViewModel.cs" />
     <Compile Include="ViewModel\TinhToanGroundViewModel.cs" />
     <Compile Include="ViewModel\Vatlieu2ViewModel.cs" />

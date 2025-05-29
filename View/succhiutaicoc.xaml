@@ -18,7 +18,7 @@
                         <Label Content="1. Sức chịu tải của cọc thí nghiệm CPT : " FontSize="12" FontWeight="Medium" />
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="28">
-                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White">
+                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White" Command="{Binding TinhToanCPTCommand}">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border Background="#03346E" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -28,13 +28,13 @@
                             </Button.Template>
                         </Button>
                         <Label Content="Kết quả" FontSize="12" FontWeight="Medium" VerticalAlignment="Center"/>
-                        <TextBox IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
+                        <TextBox Text="{Binding CPT}" IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" >
                         <Label Content="2. Sức chịu tải của cọc thí nghiệm SPT : " FontSize="12" FontWeight="Medium" />
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="28">
-                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White">
+                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White" Command="{Binding TinhToanSPTCommand}">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border Background="#03346E" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -44,13 +44,13 @@
                             </Button.Template>
                         </Button>
                         <Label Content="Kết quả" FontSize="12" FontWeight="Medium" VerticalAlignment="Center"/>
-                        <TextBox IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
+                        <TextBox Text="{Binding SPT}" IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" >
                         <Label Content="3. Sức chịu tải của cọc theo thống kê : " FontSize="12" FontWeight="Medium" />
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="28">
-                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White">
+                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White" Command="{Binding TinhToanThongKeCommand}">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border Background="#03346E" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -60,13 +60,13 @@
                             </Button.Template>
                         </Button>
                         <Label Content="Kết quả" FontSize="12" FontWeight="Medium" VerticalAlignment="Center"/>
-                        <TextBox IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
+                        <TextBox Text="{Binding ThongKe}" IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" >
                         <Label Content="4. Sức chịu tải của cọc theo vật liệu cọc : " FontSize="12" FontWeight="Medium" />
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="28">
-                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White">
+                        <Button Content="Tính toán" FontSize="12" FontWeight="Medium" Width="60" Margin="10 1 30 1" Foreground="White" Command="{Binding TinhToanVatLieuCommand}">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border Background="#03346E" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -76,11 +76,11 @@
                             </Button.Template>
                         </Button>
                         <Label Content="Kết quả" FontSize="12" FontWeight="Medium" VerticalAlignment="Center"/>
-                        <TextBox IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
+                        <TextBox Text="{Binding VatLieu}" IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="28">
                         <Label Content="Sức chịu tải Min : " FontSize="12" FontWeight="Medium" VerticalAlignment="Center"/>
-                        <TextBox IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
+                        <TextBox Text="{Binding Min}" IsReadOnly="True" Width="49" Height="22" FontWeight="Medium"/>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>

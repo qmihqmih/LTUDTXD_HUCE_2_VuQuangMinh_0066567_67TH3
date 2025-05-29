@@ -21,13 +21,13 @@ namespace LTUDTXD_HUCE_2_VuQuangMinh_0066567_67TH3.ViewModel
         {
             _GroundList = new ObservableCollection<Ground>
         {
-            new Ground { Lopdat = 1, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null },
-            new Ground { Lopdat = 2, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null },
-            new Ground { Lopdat = 3, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null },
-            new Ground { Lopdat = 4, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null },
-            new Ground { Lopdat = 5, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null },
-            new Ground { Lopdat = 6, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null },
-            new Ground { Lopdat = 7, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null }
+            new Ground { Lopdat = 1, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null, ChiSoDeo = null, GammaNuoc = 9.81, W = null, Wch = null, Wd = null },
+            new Ground { Lopdat = 2, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null, ChiSoDeo = null, GammaNuoc = 9.81, W = null, Wch = null, Wd = null },
+            new Ground { Lopdat = 3, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null, ChiSoDeo = null, GammaNuoc = 9.81, W = null, Wch = null, Wd = null },
+            new Ground { Lopdat = 4, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null, ChiSoDeo = null, GammaNuoc = 9.81, W = null, Wch = null, Wd = null },
+            new Ground { Lopdat = 5, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null, ChiSoDeo = null, GammaNuoc = 9.81, W = null, Wch = null, Wd = null },
+            new Ground { Lopdat = 6, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null, ChiSoDeo = null, GammaNuoc = 9.81, W = null, Wch = null, Wd = null },
+            new Ground { Lopdat = 7, Phi = null, H = null, Gamma = null, C =null, Modun = null, Delta = null, E = null, GroundType = " ", Doset = null, Spt = null, Cpt = null, ChiSoDeo = null, GammaNuoc = 9.81, W = null, Wch = null, Wd = null }
         };
             SaveCommand = new RelayCommand(SaveGroundData);
         }
